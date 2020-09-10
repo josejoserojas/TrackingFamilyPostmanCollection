@@ -93,7 +93,7 @@
 					"raw": "{\n  \"consentForStoringObjectsPositionsHistory\": true,\n  \"consentForStoringTransitionsHistory\": true\n}"
 				},
 				"url": {
-					"raw": "https://api.tomtom.com/geofencing/1/settings?adminKey=kyqaFxUgpmRyNwfFAfrKTUBh01TeaN9in99ZS1rQb6xpjVLk",
+					"raw": "https://api.tomtom.com/geofencing/1/settings?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
 					"protocol": "https",
 					"host": [
 						"api",
