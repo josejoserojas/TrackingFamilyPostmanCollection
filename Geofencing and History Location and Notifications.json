@@ -1,0 +1,956 @@
+{
+	"info": {
+		"_postman_id": "238dccf6-03a6-4cbe-8fd4-3fb9cf2c9a68",
+		"name": "Geofencing and History Location APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register and get AdminKey",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"secret\": \"devisode-secret\"}"
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/register?",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RequestAuthToStoreLocations",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"consentForStoringObjectsPositionsHistory\": true,\n  \"consentForStoringTransitionsHistory\": true\n}"
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/settings?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"settings"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create A Project",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"Devisode\"}"
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects/project?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects",
+						"project"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Object",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"ET\",\"defaultProject\": \"1967eb89-10b4-4bd5-bb49-aba3c2b64b87\",\"properties\": {\"type\": \"UFO\"}}"
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/objects/object?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"objects",
+						"object"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Objects",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/objects",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"objects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Projects",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStoredLocations",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/locationHistory/1/history/positions/17f69b95-1502-4bba-9f39-7ea4b03a1241?from=2020-06-30T00:00:00&adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"locationHistory",
+						"1",
+						"history",
+						"positions",
+						"17f69b95-1502-4bba-9f39-7ea4b03a1241"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2020-06-30T00:00:00"
+						},
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Fences",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects/1967eb89-10b4-4bd5-bb49-aba3c2b64b87/fences",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects",
+						"1967eb89-10b4-4bd5-bb49-aba3c2b64b87",
+						"fences"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Report",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/report/b340c02b-1197-408f-8d8d-c1d458642dd9?point=-104.58120581368176,33.465205293028546&object=17f69b95-1502-4bba-9f39-7ea4b03a1241",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"report",
+						"b340c02b-1197-408f-8d8d-c1d458642dd9"
+					],
+					"query": [
+						{
+							"key": "point",
+							"value": "-104.58120581368176,33.465205293028546"
+						},
+						{
+							"key": "object",
+							"value": "17f69b95-1502-4bba-9f39-7ea4b03a1241"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Location History",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/locationHistory/1/history?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"locationHistory",
+						"1",
+						"history"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ArchiveHistoricalLocations",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/locationHistory/1/archive/positions?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"locationHistory",
+						"1",
+						"archive",
+						"positions"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Historical Locations",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/locationHistory/1/download/9f34c667-fbfd-494c-aaf1-36670ac9587e?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"locationHistory",
+						"1",
+						"download",
+						"9f34c667-fbfd-494c-aaf1-36670ac9587e"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Fence",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/fences/6827fa0f-a788-40ee-ac14-ee8bd97c6e48?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]&dryRun=false",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"fences",
+						"6827fa0f-a788-40ee-ac14-ee8bd97c6e48"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						},
+						{
+							"key": "dryRun",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Fence",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test fence\",\n  \"type\": \"Feature\",\n  \"geometry\": {\n    \"radius\": 200,\n    \"type\": \"Point\",\n    \"shapeType\": \"Circle\",\n    \"coordinates\": [-123.115498, 49.26228555]\n  },\n  \"properties\": {\n    \"key\": \"Vancouver\"\n  }\n}"
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects/1967eb89-10b4-4bd5-bb49-aba3c2b64b87/fence?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects",
+						"1967eb89-10b4-4bd5-bb49-aba3c2b64b87",
+						"fence"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Contact Group",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Devisode Alert Group\",\n  \"webhookUrls\": [\"https://webhook.backend.com/webhook/id/IncomingWebhook/channelID/\"],\n  \"emails\": []\n}"
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/notifications/1/groups",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"notifications",
+						"1",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create ALERT Rule",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Our friend alert rule\",\n  \"object\": \"*\",\n  \"project\": \"*\",\n  \"fence\": \"*\",\n  \"transitionType\": \"ALL\",\n  \"notificationGroup\": \"ad2e51b7-dfbf-4d5b-964a-7cbca45731a3\",\n  \"enabled\": true\n}"
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/alerts/transitions?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"alerts",
+						"transitions"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST ALL ALERT RULES",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/alerts/transitions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"alerts",
+						"transitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE SINGLE ALERT RULE",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "[INSERT_API_KEY_HERE]",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/alerts/transitions/40c0c672-7f27-48df-80c6-727f2778dfb0?adminKey=[ADMIN_KEY_FOR_TRACKING_FAMILY]",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"alerts",
+						"transitions",
+						"40c0c672-7f27-48df-80c6-727f2778dfb0"
+					],
+					"query": [
+						{
+							"key": "adminKey",
+							"value": "[ADMIN_KEY_FOR_TRACKING_FAMILY]"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "[INSERT_API_KEY_HERE]",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "APIKEY",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
